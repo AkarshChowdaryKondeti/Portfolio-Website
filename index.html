@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AKARSH | portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: rgb(18, 18, 18);
+      color: white;
+    }
+
+    header {
+      background-color: rgb(24, 24, 24);
+      padding: 50px 20px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      color: deepskyblue;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: lightgray;
+      font-size: 1.2rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      padding: 18px 0;
+      background-color: rgb(30, 30, 30);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: deepskyblue;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: deepskyblue;
+      
+      padding-left: 15px;
+      margin-bottom: 20px;
+    }
+
+    
+    .about-content {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .about-text {
+      flex: 1;
+      font-size: 1rem;
+      color: lightgray;
+      line-height: 1.6;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 200px;
+      background-color: rgb(35, 35, 35);
+      border-radius: 10px;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: gray;
+      font-style: italic;
+    }
+
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .project {
+      background-color: rgb(35, 35, 35);
+      flex: 1 1 300px;
+      max-width: 350px;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project img{
+      height: 200px;
+      width: 350px;
+    }
+
+    .project:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 20px rgba(0, 191, 255, 0.2);
+    }
+
+    .project h3 {
+      color: deepskyblue;
+      margin-bottom: 10px;
+    }
+
+    .project p {
+      color: lightgray;
+      font-size: 0.95rem;
+    }
+
+    
+    .skills {
+      margin: 40px auto;
+      max-width: 900px;
+}
+
+.skills h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.skills h3 {
+  color: deepskyblue;
+  margin-top: 25px;
+  font-size: 1.2rem;
+  border-left: 4px solid deepskyblue;
+  padding-left: 8px;
+}
+
+.skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.skills li {
+  background-color: rgb(50, 50, 50);
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  color: lightgray;
+  transition: background-color 0.3s;
+}
+
+.skills li:hover {
+  background-color: deepskyblue;
+  color: black;
+}
+
+
+   
+    .contact p {
+      font-size: 1rem;
+      color: lightgray;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      background-color: rgb(24, 24, 24);
+      text-align: center;
+      padding: 20px;
+      color: rgba(255, 255, 255, 0.6);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    
+    @media (max-width: 768px) {
+      .about-content {
+        flex-direction: column;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .projects {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    a{
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>AKARSH CHOWDARY KONDETI</h1>
+    <p>Full Stack Developer</p>
+  </header>
+  
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+
+    
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            I am a B.Tech graduate in Computer Science and Engineering with a specialization in Artificial Intelligence and Machine Learning. Currently, I am strengthening my skills in Full Stack Web Development to build efficient, scalable, and user-friendly web applications.
+          </p>
+          <p>
+            I have hands-on experience with HTML, CSS, JavaScript, React, Node.js, and Python, along with a good understanding of databases like MySQL and MongoDB. I’m passionate about creating end-to-end digital solutions and continuously learning new technologies to grow as a professional Full Stack Developer.
+          </p>
+        </div>
+        <div class="about-image">
+          <img src="Face-ai.png" alt="your image here or a placeholder" height="100%" width="100%"/>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project">
+          <h3>Personal Portfolio</h3>
+          <p>A responsive and elegant portfolio website to showcase my work and skills.</p>
+        </div>
+        <div class="project">
+          <img src="ChatGPT.png"/>
+          <a href="https://akarshchowdarykondeti.github.io/ChatGPT-UI/">
+            <h3>ChatGPT UI</h3>
+            <p>Designed a ChatGPT interface clone showcasing front-end design skills with HTML and CSS.</p>
+          </a>
+          
+        </div>
+        <div class="project">
+          <img src="Vector-pic.png"/>
+          <a href="https://akarshchowdarykondeti.github.io/Project-Vector/">
+            <h3>Vector Landing Page</h3>
+            <p>Designed and developed a pixel-perfect clone of the Vector website using HTML, CSS,.</p>
+          </a>
+          
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="skills" class="skills">
+        <h2>Skills(took from ChatGPT)</h2>
+
+        <h3>Frontend</h3>
+        <ul>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>React.js</li>
+          <li>Bootstrap</li>
+          <li>Responsive Design</li>
+          <li>Figma</li>
+        </ul>
+
+        <h3>Backend</h3>
+        <ul>
+          <li>Node.js</li>
+          <li>Express.js</li>
+          <li>RESTful APIs</li>
+        </ul>
+
+        <h3>Database</h3>
+        <ul>
+          <li>MongoDB</li>
+          <li>Mongoose</li>
+          <li>MySQL</li>
+        </ul>
+
+        <h3>Tools & Version Control</h3>
+        <ul>
+          <li>Git</li>
+          <li>GitHub</li>
+          <li>VS Code</li>
+          <li>Postman</li>
+          <li>Vercel / Render</li>
+        </ul>
+
+        <h3>Other Skills</h3>
+        <ul>
+          <li>Problem Solving</li>
+          <li>OOP Concepts</li>
+          <li>Agile Methodology</li>
+          <li>Team Collaboration</li>
+        </ul>
+    </section>
+
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>📞 7981884741</p>
+      <p>📧 akarshchowdary2035@gmail.com</p>
+      <p>🔗 LinkedIn: linkedin.com/in/kondetiakarsh-chowdary-ab0377264</p>
+      <p>💻 GitHub: github.com/AkarshChowdaryKondeti</p>
+    </section>
+  </div>
+    
+
+  <footer>
+    <p>&copy; 2025 Akarsh Chowdary. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

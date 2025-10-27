@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>AKARSH | Portfolio</title>
   <style>
     body {
@@ -122,6 +123,12 @@
       margin-bottom: 10px;
     }
 
+    .project a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
     .project p {
       color: lightgray;
       font-size: 0.95rem;
@@ -173,12 +180,82 @@
       margin-bottom: 8px;
     }
 
-    footer {
-      background: rgb(24, 24, 24);
-      text-align: center;
-      padding: 20px;
-      color: rgba(255, 255, 255, 0.6);
+    /* ===== Footer Section ===== */
+    .footer {
+      background: rgb(20, 20, 20);
+      color: white;
+      padding: 60px 20px 30px;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 80px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .footer-box {
+      text-align: center;
+      flex: 1 1 250px;
+    }
+
+    .footer-box h3 {
+      color: deepskyblue;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .footer-box p {
+      color: lightgray;
+      font-size: 1rem;
+    }
+
+    .footer-box a {
+      color: deepskyblue;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-box a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 30px;
+    }
+
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .footer-socials a {
+      background: rgb(35, 35, 35);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    }
+
+    .footer-socials a:hover {
+      background: deepskyblue;
+      color: black;
+      transform: scale(1.05);
+    }
+
+    .footer-copy {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
     }
 
     @media (max-width: 768px) {
@@ -195,6 +272,18 @@
         flex-direction: column;
         align-items: center;
       }
+
+      .footer-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+      }
+
+      .footer-socials {
+        flex-direction: column;
+        gap: 10px;
+      }
     }
   </style>
 </head>
@@ -202,7 +291,7 @@
 <body>
   <header>
     <h1>AKARSH CHOWDARY KONDETI</h1>
-    <p>Full Stack Developer</p>
+    <p>Full Stack Developer   (Not Yet)</p>
   </header>
   
   <nav>
@@ -239,16 +328,16 @@
         </div>
 
         <div class="project">
-          <img src="ChatGPT.png"/>
           <a href="https://akarshchowdarykondeti.github.io/ChatGPT-UI/">
+            <img src="ChatGPT.png" alt="ChatGPT UI">
             <h3>ChatGPT UI</h3>
             <p>Designed a ChatGPT interface clone showcasing front-end design skills with HTML and CSS.</p>
           </a>
         </div>
 
         <div class="project">
-          <img src="Vector-pic.png"/>
           <a href="https://akarshchowdarykondeti.github.io/Project-Vector/">
+            <img src="Vector-pic.png" alt="Vector Project">
             <h3>Vector Landing Page</h3>
             <p>Designed and developed a pixel-perfect clone of the Vector website using HTML and CSS.</p>
           </a>
@@ -257,12 +346,12 @@
     </section>
 
     <section id="skills" class="skills">
-      <h2>Skills (took from ChatGPT)</h2>
+      <h2>Skills (Given by ChatGPT)</h2>
 
       <h3>Frontend</h3>
       <ul>
         <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>React.js</li>
-        <li>Bootstrap</li><li>Responsive Design</li><li>Figma</li>
+        <li>Bootstrap</li><li>Responsive Design</li>
       </ul>
 
       <h3>Backend</h3>
@@ -287,18 +376,36 @@
         <li>Agile Methodology</li><li>Team Collaboration</li>
       </ul>
     </section>
-
-    <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <p>📞 7981884741</p>
-      <p>📧 akarshchowdary2035@gmail.com</p>
-      <p>🔗 LinkedIn: linkedin.com/in/kondetiakarsh-chowdary-ab0377264</p>
-      <p>💻 GitHub: github.com/AkarshChowdaryKondeti</p>
-    </section>
   </div>
 
-  <footer>
-    <p>&copy; 2025 Akarsh Chowdary. All rights reserved.</p>
+  <!-- ===== New Footer Section ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-box">
+        <h3>📍 Address</h3>
+        <p>Kakinada, Andhra Pradesh, India</p>
+      </div>
+
+      <div class="footer-box">
+        <h3>📞 Call Me</h3>
+        <p><a href="tel:+917981884741">+91 7981884741</a></p>
+      </div>
+
+      <div class="footer-box">
+        <h3>📧 Contact Me</h3>
+        <p><a href="mailto:akarshchowdary2035@gmail.com">akarshchowdary2035@gmail.com</a></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-socials">
+        <a href="tel:+917981884741"><i class="fa-solid fa-mobile"></i> Call</a>
+        <a href="mailto:akarshchowdary2035@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+        <a href="https://www.linkedin.com/in/kondetiakarsh-chowdary-ab0377264/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/AkarshChowdaryKondeti" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+      </div>
+      <p class="footer-copy">&copy; 2025 Akarsh Chowdary | All Rights Reserved</p>
+    </div>
   </footer>
 </body>
 </html>

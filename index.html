@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Akarsh Chowdary Kondeti - Full Stack Developer | AI & ML Enthusiast | Portfolio">
   <link rel="icon" type="image/x-icon" href="Fevicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>AKARSH | Portfolio</title>
@@ -12,26 +13,51 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: rgb(18, 18, 18);
       color: white;
+      scroll-behavior: smooth;
     }
-
+    a { text-decoration: none; color: inherit; }
     header {
       background: rgb(24, 24, 24);
       padding: 50px 20px;
       text-align: center;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
     }
-
     header h1 {
       font-size: 2.8rem;
       color: deepskyblue;
       margin-bottom: 10px;
     }
-
-    header p {
+    .hero-tagline {
       color: lightgray;
       font-size: 1.2rem;
+      margin-bottom: 15px;
     }
-
+    .typed-text {
+      color: deepskyblue;
+      font-weight: bold;
+    }
+    #downloadResume, .floating-resume {
+      padding: 12px 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: black;
+      background: deepskyblue;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    #downloadResume:hover, .floating-resume:hover {
+      background: dodgerblue;
+      transform: scale(1.05);
+    }
+    .floating-resume {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
     nav {
       display: flex;
       justify-content: center;
@@ -42,7 +68,6 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       flex-wrap: wrap;
     }
-
     nav a {
       color: white;
       text-decoration: none;
@@ -50,54 +75,18 @@
       font-size: 1rem;
       transition: color 0.3s ease;
     }
+    nav a:hover { color: deepskyblue; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: flex; flex-direction: column; gap: 60px; }
+    section h2 { font-size: 2rem; color: deepskyblue; padding-left: 15px; margin-bottom: 20px; }
 
-    nav a:hover {
-      color: deepskyblue;
-    }
+    /* About Section */
+    .about-content { display: flex; gap: 40px; flex-wrap: wrap; }
+    .about-text { flex: 1; color: lightgray; line-height: 1.6; }
+    .about-image { width: 250px; min-width: 200px; height: 300px; border-radius: 10px; overflow: hidden; }
+    .about-image img { width: 100%; height: 100%; object-fit: cover; }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 60px;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      color: deepskyblue;
-      padding-left: 15px;
-      margin-bottom: 20px;
-    }
-
-    .about-content {
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
-
-    .about-text {
-      flex: 1;
-      color: lightgray;
-      line-height: 1.6;
-    }
-
-    .about-image {
-      width: 250px;
-      min-width: 200px;
-      height: 300px;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .projects {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 25px;
-      justify-content: center;
-    }
-
+    /* Projects */
+    .projects { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; }
     .project {
       background: rgb(35, 35, 35);
       flex: 1 1 300px;
@@ -107,247 +96,115 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    .project:hover { transform: scale(1.03); box-shadow: 0 4px 20px rgba(0,191,255,0.2); }
+    .project img { height: 200px; width: 100%; border-radius: 6px; }
+    .project h3 { color: deepskyblue; margin-bottom: 5px; }
+    .project .tech-stack { color: lightgray; font-size: 0.85rem; margin-bottom: 10px; }
+    .project p { color: lightgray; font-size: 0.95rem; }
 
-    .project img {
-      height: 200px;
-      width: 100%;
-      border-radius: 6px;
-    }
+    /* Skills */
+    .skills h3 { color: deepskyblue; margin-top: 25px; font-size: 1.2rem; border-left: 4px solid deepskyblue; padding-left: 8px; }
+    .skills ul { display: flex; flex-wrap: wrap; gap: 15px; list-style: none; padding: 0; margin: 10px 0; }
+    .skills li { background: rgb(50, 50, 50); padding: 10px 18px; border-radius: 25px; font-size: 0.95rem; color: lightgray; transition: background 0.3s; }
+    .skills li:hover { background: deepskyblue; color: black; }
 
-    .project:hover {
-      transform: scale(1.03);
-      box-shadow: 0 4px 20px rgba(0, 191, 255, 0.2);
-    }
+    /* Certifications / Achievements */
+    .certifications, .achievements { margin-top: 20px; color: lightgray; }
+    .certifications ul, .achievements ul { list-style: disc inside; padding-left: 15px; }
 
-    .project h3 {
-      color: deepskyblue;
-      margin-bottom: 10px;
-    }
+    /* Contact (simplified) */
+    .contact p { color: lightgray; margin-bottom: 8px; }
 
-    .project a {
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
+    /* Footer */
+    .footer { background: rgb(20, 20, 20); color: white; padding: 60px 20px 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+    .footer-top { display: flex; justify-content: center; align-items: flex-start; gap: 80px; flex-wrap: wrap; margin-bottom: 40px; }
+    .footer-box { text-align: center; flex: 1 1 250px; }
+    .footer-box h3 { color: deepskyblue; margin-bottom: 10px; font-size: 1.3rem; }
+    .footer-box p { color: lightgray; font-size: 1rem; }
+    .footer-box a { color: deepskyblue; text-decoration: none; transition: color 0.3s; }
+    .footer-box a:hover { color: white; }
+    .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; }
+    .footer-socials { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
+    .footer-socials a { background: rgb(35, 35, 35); color: white; padding: 10px 18px; border-radius: 25px; text-decoration: none; font-weight: 500; transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease; }
+    .footer-socials a:hover { background: deepskyblue; color: black; transform: scale(1.05); }
+    .footer-copy { color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; }
 
-    .project p {
-      color: lightgray;
-      font-size: 0.95rem;
-    }
-
-    .skills {
-      margin: 40px auto;
-      max-width: 900px;
-    }
-
-    .skills h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .skills h3 {
-      color: deepskyblue;
-      margin-top: 25px;
-      font-size: 1.2rem;
-      border-left: 4px solid deepskyblue;
-      padding-left: 8px;
-    }
-
-    .skills ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-
-    .skills li {
-      background: rgb(50, 50, 50);
-      padding: 10px 18px;
-      border-radius: 25px;
-      font-size: 0.95rem;
-      color: lightgray;
-      transition: background 0.3s;
-    }
-
-    .skills li:hover {
-      background: deepskyblue;
-      color: black;
-    }
-
-    .contact p {
-      color: lightgray;
-      margin-bottom: 8px;
-    }
-
-    /* ===== Footer Section ===== */
-    .footer {
-      background: rgb(20, 20, 20);
-      color: white;
-      padding: 60px 20px 30px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .footer-top {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 80px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
-
-    .footer-box {
-      text-align: center;
-      flex: 1 1 250px;
-    }
-
-    .footer-box h3 {
-      color: deepskyblue;
-      margin-bottom: 10px;
-      font-size: 1.3rem;
-    }
-
-    .footer-box p {
-      color: lightgray;
-      font-size: 1rem;
-    }
-
-    .footer-box a {
-      color: deepskyblue;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .footer-box a:hover {
-      color: white;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 30px;
-    }
-
-    .footer-socials {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
-
-    .footer-socials a {
-      background: rgb(35, 35, 35);
-      color: white;
-      padding: 10px 18px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
-    }
-
-    .footer-socials a:hover {
-      background: deepskyblue;
-      color: black;
-      transform: scale(1.05);
-    }
-
-    .footer-copy {
-      color: rgba(255, 255, 255, 0.6);
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-      .about-content {
-        flex-direction: column;
-      }
-
-      nav {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .projects {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .footer-top {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 30px;
-      }
-
-      .footer-socials {
-        flex-direction: column;
-        gap: 10px;
-      }
+    @media (max-width:768px) {
+      .about-content, .footer-top { flex-direction: column; align-items: center; text-align: center; }
+      nav { flex-direction: column; gap: 10px; }
+      .projects { flex-direction: column; align-items: center; }
+      .footer-socials { flex-direction: column; gap: 10px; }
     }
   </style>
 </head>
-
 <body>
+
+  <!-- Header -->
   <header>
     <h1>AKARSH CHOWDARY KONDETI</h1>
-    <p>Full Stack Developer   (Not Yet)</p>
+    <h3>Aspiring Full-Stack Developer</h3>
+    <p class="hero-tagline">I build <span class="typed-text">Modern Web Apps | AI & ML Solutions | Full Stack Projects</span></p>
+    <button id="downloadResume">📄 Download Resume</button>
   </header>
-  
+
+  <!-- Navigation -->
   <nav>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
+    <a href="#certifications">Certifications</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <div class="container">
+    <!-- About -->
     <section id="about">
       <h2>About Me</h2>
       <div class="about-content">
         <div class="about-image">
-          <img src="Face-ai.png" alt="Profile Image" height="100%" width="100%"/>
+          <img src="Face-ai.png" alt="Profile Image"/>
         </div>
         <div class="about-text">
-          <p>
-            I am a B.Tech graduate in Computer Science and Engineering with a specialization in Artificial Intelligence and Machine Learning. Currently, I am strengthening my skills in Full Stack Web Development to build efficient, scalable, and user-friendly web applications.
-          </p>
-          <p>
-            I have hands-on experience with HTML, CSS, JavaScript, React, Node.js, and Python, along with a good understanding of databases like MySQL and MongoDB. I’m passionate about creating end-to-end digital solutions and continuously learning new technologies to grow as a professional Full Stack Developer.
-          </p>
+          <p>B.Tech in Computer Science & Engineering, specialized in AI & ML. Aspiring Full Stack Developer building scalable web applications and AI-powered solutions.</p>
+          <p>Experienced with HTML, CSS, JavaScript, React, Node.js, Python, MySQL, and MongoDB. Passionate about creating end-to-end digital solutions and continuously learning new technologies.</p>
         </div>
       </div>
     </section>
 
+    <!-- Projects -->
     <section id="projects">
       <h2>Projects</h2>
       <div class="projects">
         <div class="project">
           <h3>Personal Portfolio</h3>
-          <p>A responsive and elegant portfolio website to showcase my work and skills.</p>
+          <p class="tech-stack">HTML, CSS, JS, Responsive Design</p>
+          <p>A responsive portfolio website showcasing my skills and projects.</p>
+          <a href="https://akarshchowdarykondeti.github.io/Portfolio/" target="_blank">Live Demo</a>
         </div>
 
         <div class="project">
-          <a href="https://akarshchowdarykondeti.github.io/ChatGPT-UI/">
-            <img src="ChatGPT.png" alt="ChatGPT UI">
+          <a href="https://akarshchowdarykondeti.github.io/ChatGPT-UI/" target="_blank">
+            <img src="ChatGPT.png" alt="ChatGPT UI"/>
             <h3>ChatGPT UI</h3>
-            <p>Designed a ChatGPT interface clone showcasing front-end design skills with HTML and CSS.</p>
+            <p class="tech-stack">HTML, CSS, JS, React.js</p>
+            <p>ChatGPT interface clone demonstrating frontend design skills.</p>
           </a>
         </div>
 
         <div class="project">
-          <a href="https://akarshchowdarykondeti.github.io/Project-Vector/">
-            <img src="Vector-pic.png" alt="Vector Project">
+          <a href="https://akarshchowdarykondeti.github.io/Project-Vector/" target="_blank">
+            <img src="Vector-pic.png" alt="Vector Project"/>
             <h3>Vector Landing Page</h3>
-            <p>Designed and developed a pixel-perfect clone of the Vector website using HTML and CSS.</p>
+            <p class="tech-stack">HTML, CSS</p>
+            <p>Pixel-perfect clone of the Vector website landing page.</p>
           </a>
         </div>
       </div>
     </section>
 
+    <!-- Skills -->
     <section id="skills" class="skills">
-      <h2>Skills (Given by ChatGPT)</h2>
+      <h2>Skills</h2>
 
       <h3>Frontend</h3>
       <ul>
@@ -357,57 +214,107 @@
 
       <h3>Backend</h3>
       <ul>
-        <li>Node.js</li><li>Express.js</li><li>RESTful APIs</li>
+        <li>Python</li><li>Java</li><li>Node.js</li>
+        <li>Express.js</li><li>RESTful APIs</li><li>SQL (MySQL, Oracle)</li>
       </ul>
 
       <h3>Database</h3>
       <ul>
-        <li>MongoDB</li><li>Mongoose</li><li>MySQL</li>
+        <li>MySQL</li><li>MongoDB (NoSQL)</li><li>Mongoose</li><li>Oracle (Basic)</li>
       </ul>
 
-      <h3>Tools & Version Control</h3>
+      <h3>Tools & Platforms</h3>
       <ul>
-        <li>Git</li><li>GitHub</li><li>VS Code</li>
-        <li>Postman</li><li>Vercel / Render</li>
+        <li>Git</li><li>GitHub</li><li>VS Code</li><li>Power BI</li><li>MS Excel</li>
       </ul>
 
       <h3>Other Skills</h3>
       <ul>
-        <li>Problem Solving</li><li>OOP Concepts</li>
-        <li>Agile Methodology</li><li>Team Collaboration</li>
+        <li>OOP</li><li>SDLC</li><li>AI / ML</li><li>Deep Learning</li>
+        <li>Generative AI</li><li>Prompt Engineering</li>
       </ul>
+    </section>
+
+    <!-- Certifications / Achievements -->
+    <section id="certifications">
+      <h2>Certifications & Achievements</h2>
+      <div class="certifications">
+        <ul>
+          <!-- Replace or add your certifications here -->
+          <li>Certification 1 - Institution / Year</li>
+          <li>Certification 2 - Institution / Year</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact (Simplified) -->
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>If you’d like to get in touch, feel free to reach out via email, phone, or LinkedIn below!</p>
     </section>
   </div>
 
-  <!-- ===== New Footer Section ===== -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-top">
       <div class="footer-box">
         <h3>📍 Address</h3>
         <p>Kakinada, Andhra Pradesh, India</p>
       </div>
-
       <div class="footer-box">
         <h3>📞 Call Me</h3>
         <p><a href="tel:+917981884741">+91 7981884741</a></p>
       </div>
-
       <div class="footer-box">
         <h3>📧 Contact Me</h3>
         <p><a href="mailto:akarshchowdary2035@gmail.com">akarshchowdary2035@gmail.com</a></p>
       </div>
     </div>
-
     <div class="footer-bottom">
       <div class="footer-socials">
         <a href="tel:+917981884741"><i class="fa-solid fa-mobile"></i> Call</a>
         <a href="mailto:akarshchowdary2035@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
-        <a href="https://www.linkedin.com/in/akarsh-chowdary-kondeti-ab0377264?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a href="https://www.linkedin.com/in/akarsh-chowdary-kondeti-ab0377264/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
         <a href="https://github.com/AkarshChowdaryKondeti" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
       </div>
       <p class="footer-copy">&copy; 2025 Akarsh Chowdary | All Rights Reserved</p>
     </div>
   </footer>
+
+  <!-- Floating Resume Button -->
+  <button class="floating-resume" id="floatingResume">📄 Download Resume</button>
+
+  <script>
+    // Resume download
+    function downloadResume() {
+      const link = document.createElement("a");
+      link.href = "AKARSH CHOWDARY KONDETI RESUME Updated.pdf"; // Replace with actual file path
+      link.download = "AKARSH CHOWDARY KONDETI RESUME Updated.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+    document.getElementById("downloadResume").addEventListener("click", downloadResume);
+    document.getElementById("floatingResume").addEventListener("click", downloadResume);
+
+    // Typed text animation
+    const typedText = document.querySelector(".typed-text");
+    const texts = ["Modern Web Apps", "AI & ML Solutions", "Full Stack Projects"];
+    let count = 0, index = 0, currentText = '', letter = '';
+    function type() {
+      if(count === texts.length) count = 0;
+      currentText = texts[count];
+      letter = currentText.slice(0, ++index);
+      typedText.textContent = letter;
+      if(letter.length === currentText.length){
+        count++;
+        index = 0;
+        setTimeout(type, 1000);
+      } else {
+        setTimeout(type, 150);
+      }
+    }
+    type();
+  </script>
 </body>
 </html>
-
